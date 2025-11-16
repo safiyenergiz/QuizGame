@@ -66,7 +66,6 @@ void mainMenu() {
 
     while (1) {
         printHeader();
-        printf("Developed by: Safiye Nergiz 🦋\n\n");
         printf("  [1] Start Quiz\n");
         printf("  [2] Choose Category\n");
         printf("  [3] Set Time Limit\n");
