@@ -15,7 +15,7 @@ struct Question {
     int category;
 };
 
-// Function declarations
+
 void mainMenu();
 void startQuiz(int category, int timeLimit);
 void chooseCategory();
@@ -27,11 +27,11 @@ void printCorrect();
 void printWrong(char correct);
 int askQuestion(struct Question q, int timeLimit);
 
-// Global
+
 int selectedCategory = GENERAL;
 int globalTimeLimit = 15;
 
-// ====== QUESTION BANK ======
+
 struct Question qbank[] = {
     {"What is the capital of France?", "A) Paris", "B) Madrid", "C) Rome", "D) Berlin", 'A', GENERAL},
     {"Which data type stores integers in C?", "A) float", "B) int", "C) char", "D) double", 'B', CPROG},
@@ -47,20 +47,19 @@ struct Question qbank[] = {
 
 int qsize = sizeof(qbank) / sizeof(qbank[0]);
 
-// ================= MAIN =================
+
 int main() {
     mainMenu();
     return 0;
 }
 
-// ================= HEADER =================
+
 void printHeader() {
     printf("\n=============================================\n");
     printf("               QUIZ GAME v2.0\n");
     printf("=============================================\n");
 }
 
-// ================= MAIN MENU =================
 void mainMenu() {
     int choice;
 
@@ -96,7 +95,7 @@ void mainMenu() {
     }
 }
 
-// ================= CATEGORY =================
+
 void chooseCategory() {
     int c;
     printHeader();
@@ -119,7 +118,7 @@ void chooseCategory() {
     }
 }
 
-// ================= TIME LIMIT =================
+
 void setTimeLimit() {
     printHeader();
     printf("Enter time per question (seconds): ");
@@ -130,7 +129,7 @@ void setTimeLimit() {
     printf("Time limit set to %d seconds!\n", globalTimeLimit);
 }
 
-// ================= SHOW HIGH SCORE =================
+
 void showHighScore() {
     FILE *f = fopen("highscore.txt", "r");
     int score = 0;
@@ -144,7 +143,7 @@ void showHighScore() {
     printf("High Score: %d\n", score);
 }
 
-// ================= SAVE SCORE =================
+
 void saveScore(int score) {
     int high = 0;
     FILE *f = fopen("highscore.txt", "r");
@@ -162,7 +161,7 @@ void saveScore(int score) {
     }
 }
 
-// ================= CORRECT / WRONG SCREENS =================
+
 void printCorrect() {
     printf("---------------------------------------------\n");
     printf("                 ✅ CORRECT!\n");
@@ -176,7 +175,7 @@ void printWrong(char correct) {
     printf("---------------------------------------------\n");
 }
 
-// ================= ASK QUESTION =================
+
 int askQuestion(struct Question q, int timeLimit) {
     time_t start, end;
     char answer;
@@ -207,7 +206,7 @@ int askQuestion(struct Question q, int timeLimit) {
     }
 }
 
-// ================= START QUIZ =================
+
 void startQuiz(int category, int timeLimit) {
     int score = 0;
 
